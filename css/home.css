@@ -1,0 +1,189 @@
+/* ============================================
+   THE ECONOMIC WARDROBE — Homepage
+   ============================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: #1a1816;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* ── OUTER WRAP ───────────────────────────── */
+.home-wrap {
+  display: grid;
+  grid-template-columns: 38vw 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ══════════════════════════════════════════
+   LEFT PANEL
+══════════════════════════════════════════ */
+.home-left {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 36px 0 48px 0;
+  background: #1a1816;
+  z-index: 10;
+}
+
+/* Search icon — top left */
+.home-search {
+  position: absolute;
+  top: 28px;
+  left: 32px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.55);
+  cursor: pointer;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Mid section: two sub-columns like reference STORY/DONATE */
+.home-nav-mid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 0 32px;
+  margin-top: 100px;
+  gap: 16px;
+  align-items: start;
+}
+
+.home-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.home-articles a {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  text-decoration: none;
+  line-height: 1.75;
+  transition: color 0.2s;
+}
+
+.home-articles a:hover { color: #fff; }
+
+.home-nav-brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-nav-brand span {
+  display: block;
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  line-height: 2;
+}
+
+/* Bottom subscribe — mirrors TICKETS in reference */
+.home-subscribe {
+  display: inline-block;
+  margin-left: 32px;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.home-subscribe:hover { color: #fff; }
+
+/* ══════════════════════════════════════════
+   RIGHT PANEL
+══════════════════════════════════════════ */
+.home-right {
+  position: relative;
+  overflow: hidden;
+  height: 100vh;
+  background: #1a1816;
+}
+
+/* ── IMAGES — positioned behind letters ── */
+.home-img {
+  position: absolute;
+  overflow: hidden;
+}
+
+.home-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Image 1: sits in top-left — visible through T openings */
+.home-img-1 {
+  top: 0;
+  left: 0;
+  width: 30%;
+  height: 52%;
+}
+
+/* Image 2: sits in top-right — visible through E openings */
+.home-img-2 {
+  top: 0;
+  right: 0;
+  width: 34%;
+  height: 54%;
+}
+
+/* Image 3: bottom-left — visible through W left strokes */
+.home-img-3 {
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  height: 50%;
+}
+
+/* Image 4: bottom-right — visible through W right strokes */
+.home-img-4 {
+  bottom: 0;
+  right: 0;
+  width: 38%;
+  height: 52%;
+}
+
+/* ── LETTERS — cream, on top of images ─── */
+.home-letters {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  line-height: 0.83;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.home-te,
+.home-w {
+  display: block;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 900;
+  color: #f0e4cc;
+  letter-spacing: -0.03em;
+  line-height: 0.83;
+  white-space: nowrap;
+}
+
+.home-te {
+  font-size: 30vw;
+}
+
+.home-w {
+  font-size: 33vw;
+}

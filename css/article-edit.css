@@ -1,0 +1,663 @@
+/* ============================================
+   THE ECONOMIC WARDROBE — Magazine Spread
+   ============================================ */
+
+/* EDIT BANNER */
+.edit-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #111;
+  color: #999;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  padding: 9px 28px;
+  gap: 16px;
+}
+
+.edit-banner button {
+  background: #fff;
+  color: #111;
+  border: none;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+}
+
+.edit-banner button.active {
+  background: #c0392b;
+  color: #fff;
+}
+
+/* EDITABLE */
+.editable { outline: none; border-radius: 2px; transition: box-shadow 0.15s, background 0.12s; }
+body.editing-mode .editable { box-shadow: inset 0 0 0 1px rgba(192,57,43,0.4); background: rgba(192,57,43,0.03); cursor: text; }
+body.editing-mode .editable:focus { box-shadow: inset 0 0 0 2px rgba(192,57,43,0.65); background: rgba(255,255,255,0.9); }
+
+/* ============================================
+   MAGAZINE VIEWER SHELL
+   ============================================ */
+
+.mag-viewer {
+  background: #111 url('../background.png') center center / cover no-repeat;
+  padding: 1cm 0;
+  margin: 0;
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPREAD CONTAINER */
+.mag-spreads {
+  width: 100%;
+  max-width: 1280px;
+  padding: 0 80px; /* space for arrows */
+  position: relative;
+  min-height: 720px;
+  overflow: hidden;
+}
+
+/* Individual spread — hidden by default, shown when active */
+.mag-spread {
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 720px;
+  gap: 0;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.7);
+  position: relative;
+  height: 720px;
+}
+
+.mag-spread.active {
+  display: grid;
+}
+
+/* PAGE (left or right half) */
+.mag-page-left,
+.mag-page-right {
+  background: #f5f6f7;
+  position: relative;
+  overflow: hidden;
+  height: 720px;
+  max-height: 720px;
+}
+
+/* Spine shadow */
+.mag-page-left::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.12));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.mag-page-right::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 24px;
+  height: 100%;
+  background: linear-gradient(to left, transparent, rgba(0,0,0,0.07));
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* PAGE NUMBER */
+.mag-page-num {
+  position: absolute;
+  bottom: 18px;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  z-index: 5;
+}
+
+.mag-page-left .mag-page-num  { left: 28px; }
+.mag-page-right .mag-page-num { right: 28px; }
+
+.mag-pub-name {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-ui);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #bbb;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+/* ============================================
+   CANVA FULL-PAGE IMAGE MODE
+   ============================================ */
+
+.canva-page {
+  padding: 0 !important;
+}
+
+.return-home-btn {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  background: #fff;
+  color: #1a1a1a;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 12px 28px;
+  border: 1px solid rgba(0,0,0,0.2);
+  white-space: nowrap;
+  transition: background 0.2s, color 0.2s;
+}
+
+.return-home-btn:hover {
+  background: #1a1a1a;
+  color: #fff;
+}
+
+.canva-page img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================
+   SPREAD 1 — LEFT PAGE: full-bleed image + title overlay
+   ============================================ */
+
+.spread1-left {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.spread1-left .page-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spread1-left .img-placeholder--page {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background: #c8c4bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #999;
+  border: none;
+}
+
+.spread1-title-overlay {
+  position: relative;
+  z-index: 3;
+  padding: 0 32px 96px 32px;
+  width: 100%;
+}
+
+.spread1-title-overlay .article-category {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 8px;
+}
+
+.spread1-title-overlay h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  color: #fff;
+  text-shadow: 0 2px 24px rgba(0,0,0,0.45);
+  margin: 0;
+}
+
+/* Dark scrim at bottom of left page so title is legible */
+.spread1-left::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 65%;
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Override spine shadow for spread1 left */
+.spread1-left.mag-page-left::after {
+  /* keep only the scrim, add spine on top */
+  background: linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 100%),
+              linear-gradient(to right, transparent 95%, rgba(0,0,0,0.12) 100%);
+}
+
+/* ============================================
+   SPREAD 1 — RIGHT PAGE: lede + inline image
+   ============================================ */
+
+.spread1-right {
+  padding: 96px 44px 96px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.spread1-right .lede {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #222;
+  margin-bottom: 32px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid #ddd;
+}
+
+.spread1-right .inline-img-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  flex: 1;
+}
+
+.spread1-right .inline-img-wrap .img-placeholder--inline,
+.spread1-right .inline-img-wrap .page-img-inline {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  background: #c8c4bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  border: none;
+}
+
+.spread1-right .inline-text {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: #444;
+  column-count: 1;
+}
+
+.spread1-right .byline-block {
+  margin-top: 20px;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.spread1-right .byline-block .byline {
+  font-size: 0.8rem;
+  margin-bottom: 2px;
+}
+
+.spread1-right .byline-block .era-tag {
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+/* ============================================
+   SPREAD 2 — LEFT PAGE: large text column + pull quote
+   ============================================ */
+
+.spread2-left {
+  padding: 96px 36px 96px 44px;
+  border-right: 1px solid #e0ddd8;
+}
+
+.spread2-left .body-col {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: #333;
+}
+
+.spread2-left .body-col p {
+  margin-bottom: 1.3em;
+}
+
+.spread2-left .body-col p:first-of-type::first-letter {
+  font-family: var(--font-display);
+  font-size: 4.4em;
+  font-weight: 900;
+  float: left;
+  line-height: 0.8;
+  margin-right: 7px;
+  margin-top: 5px;
+  color: #1a1a1a;
+}
+
+.spread2-img-block {
+  margin: 24px 0;
+}
+
+.spread2-img-block .img-placeholder--spread2,
+.spread2-img-block .page-img-spread2 {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  background: #c8c4bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  border: none;
+}
+
+.spread2-img-block .image-caption {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #999;
+  margin-top: 6px;
+}
+
+/* ============================================
+   SPREAD 2 — RIGHT PAGE: continued text + closing image
+   ============================================ */
+
+.spread2-right {
+  padding: 96px 44px 96px 36px;
+}
+
+.spread2-right .body-col {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: #333;
+  margin-bottom: 28px;
+}
+
+.spread2-right .body-col p {
+  margin-bottom: 1.3em;
+}
+
+.spread2-right .closing-img {
+  margin-top: 8px;
+}
+
+.spread2-right .closing-img .img-placeholder--closing,
+.spread2-right .closing-img .page-img-closing {
+  width: 100%;
+  aspect-ratio: 16/8;
+  object-fit: cover;
+  background: #c8c4bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  border: none;
+}
+
+.spread2-right .closing-img .image-caption {
+  font-size: 0.72rem;
+  font-style: italic;
+  color: #999;
+  margin-top: 6px;
+}
+
+/* ============================================
+   SPREAD 3 — LEFT: big image, RIGHT: text
+   ============================================ */
+
+.spread3-left {
+  position: relative;
+  overflow: hidden;
+}
+
+.spread3-left .img-placeholder--page,
+.spread3-left .page-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #b8b4ac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ui);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #888;
+  border: none;
+}
+
+.spread3-caption {
+  position: absolute;
+  bottom: 36px;
+  left: 24px;
+  right: 24px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-style: italic;
+  color: rgba(255,255,255,0.75);
+  z-index: 4;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.spread3-right {
+  padding: 96px 44px 96px 36px;
+}
+
+.spread3-right .body-col {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: #333;
+}
+
+.spread3-right .body-col p {
+  margin-bottom: 1.3em;
+}
+
+.spread3-pullquote {
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 1px solid #ccc;
+  margin: 32px 0;
+  padding: 20px 0;
+}
+
+.spread3-pullquote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-style: italic;
+  line-height: 1.35;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* ============================================
+   SPREAD 4 — Closing spread (two text columns)
+   ============================================ */
+
+.spread4-left,
+.spread4-right {
+  padding: 96px 36px 96px 44px;
+}
+
+.spread4-right {
+  padding: 96px 44px 96px 36px;
+  border-left: 1px solid #e0ddd8;
+}
+
+.spread4-left .body-col,
+.spread4-right .body-col {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  line-height: 1.82;
+  color: #333;
+}
+
+.spread4-left .body-col p,
+.spread4-right .body-col p {
+  margin-bottom: 1.3em;
+}
+
+.spread4-closing-note {
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  color: #aaa;
+  font-style: italic;
+}
+
+/* ============================================
+   ARROWS
+   ============================================ */
+
+.mag-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff;
+  width: 48px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.3rem;
+  z-index: 10;
+  transition: background 0.2s;
+  user-select: none;
+  border-radius: 3px;
+}
+
+.mag-arrow:hover { background: rgba(255,255,255,0.22); }
+.mag-arrow:active { background: rgba(255,255,255,0.35); }
+.mag-arrow--prev { left: 16px; }
+.mag-arrow--next { right: 16px; }
+.mag-arrow.hidden { opacity: 0.2; pointer-events: none; }
+
+/* ============================================
+   PAGE FLIP ANIMATIONS — spine turn
+   ============================================ */
+
+/* The viewer needs perspective for 3D depth */
+.mag-viewer {
+  perspective: 2800px;
+}
+
+/* Forward turn: right half folds left over the spine */
+@keyframes pageTurnFwd {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(-180deg); }
+}
+
+/* Backward turn: left half folds right over the spine */
+@keyframes pageTurnBwd {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(180deg); }
+}
+
+/* Shadow that sweeps across the resting page during the turn */
+@keyframes shadowFwd {
+  0%   { background: rgba(0,0,0,0); }
+  40%  { background: rgba(0,0,0,0.18); }
+  100% { background: rgba(0,0,0,0); }
+}
+
+@keyframes shadowBwd {
+  0%   { background: rgba(0,0,0,0); }
+  40%  { background: rgba(0,0,0,0.18); }
+  100% { background: rgba(0,0,0,0); }
+}
+
+/* SPREAD DOTS */
+.mag-dots {
+  display: flex;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.mag-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.mag-dot.active { background: #fff; }
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 860px) {
+  .mag-spread.active {
+    grid-template-columns: 1fr;
+  }
+
+  .mag-spreads { padding: 0 52px; }
+
+  .mag-page-left, .mag-page-right { height: 500px; max-height: 500px; }
+  .mag-spread { height: auto; grid-template-rows: unset; }
+
+  .spread1-left { min-height: 420px; }
+
+  .spread1-title-overlay h1 { font-size: 3rem; }
+
+  .spread1-right .inline-img-wrap { grid-template-columns: 1fr; }
+
+  .mag-arrow { width: 36px; height: 56px; font-size: 1rem; }
+  .mag-arrow--prev { left: 6px; }
+  .mag-arrow--next { right: 6px; }
+}

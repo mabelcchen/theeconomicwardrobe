@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m http.server 8080)",
+      "Bash(sed -e 's|The Color You Could Be Executed for Wearing|The Most Influential Decade in Fashion Was Broke the Whole Time|g' -e 's|Power \\\\&amp; Pigment|Cultural Comment|g' -e 's|article-byzantine.html|article-90s.html|g' -e 's|article-90s.html\" class=\"article-link\">\\\\n.*Cultural Comment|article-byzantine.html\" class=\"article-link\">\\\\n          <span class=\"category-label\">Power \\\\&amp; Pigment</span>|g' -e 's|The Byzantine Empire \\\\&mdash; 330–1453 AD|The 1990s \\\\&mdash; Recession, Grunge \\\\&amp; the Birth of Streetwear|g' -e 's|article-byzantine.html — The Economic Wardrobe|article-90s.html — The Economic Wardrobe|g' -e 's|<title>The Color.*<\\\\/title>|<title>The Most Influential Decade in Fashion Was Broke the Whole Time — The Economic Wardrobe<\\\\/title>|g' /Users/mabelc/Desktop/mag/article-byzantine.html)",
+      "Bash(sed -e 's|The Color You Could Be Executed for Wearing|How the Black Death Gave the Working Class Their First Taste of Luxury|g' -e 's|Power \\\\&amp; Pigment|Class \\\\&amp; Cloth|g' -e 's|article-byzantine.html|article-blackdeath.html|g' -e 's|The Byzantine Empire \\\\&mdash; 330–1453 AD|Medieval Europe \\\\&mdash; The Black Death \\\\&amp; Its Aftermath, 1347–1400|g' -e 's|<title>The Color.*<\\\\/title>|<title>How the Black Death Gave the Working Class Their First Taste of Luxury — The Economic Wardrobe<\\\\/title>|g' /Users/mabelc/Desktop/mag/article-byzantine.html)",
+      "Bash(find /Users/mabelc/Desktop -name \"byz_cover*\" 2>/dev/null)",
+      "Bash(npm --version)",
+      "Bash(python3 -c \"from http.server import HTTPServer; print\\('ok'\\)\")",
+      "Bash(unzip -o byzantine.zip -d byzantine_pages)",
+      "Bash(unzip -o 1990s.zip -d 1990s_pages)",
+      "Bash(sed -i '' 's|<section class=\"more-from\">|<div class=\"more-from-wrap\"><video class=\"bg-video\" autoplay muted loop playsinline src=\"background.mp4\"></video><section class=\"more-from\">|g' /Users/mabelc/Desktop/mag/article-byzantine.html /Users/mabelc/Desktop/mag/article-90s.html /Users/mabelc/Desktop/mag/article-blackdeath.html)",
+      "Bash(sed -i '' 's|</section>|</section></div>|g' /Users/mabelc/Desktop/mag/article-byzantine.html /Users/mabelc/Desktop/mag/article-90s.html /Users/mabelc/Desktop/mag/article-blackdeath.html)",
+      "Bash(unzip -o byz_final.zip -d byz_final_pages)",
+      "Bash(unzip -o \"mediecal europe.zip\" -d medieval_pages)",
+      "Bash(unzip -o \"medieval europe.zip\" -d medieval_pages)",
+      "Bash(sed -i '' 's|<a href=\"#\">about</a>|<a href=\"about.html\">about</a>|g' /Users/mabelc/Desktop/mag/index.html)",
+      "Bash(sed -i '' 's|<a href=\"#\">About</a>|<a href=\"about.html\">About</a>|g' /Users/mabelc/Desktop/mag/article-byzantine.html /Users/mabelc/Desktop/mag/article-90s.html /Users/mabelc/Desktop/mag/article-blackdeath.html)",
+      "Bash(sed -i '' 's/font-size: 0\\\\.82rem;/font-size: 1rem;/' /Users/mabelc/Desktop/mag/about.html)",
+      "Bash(sed -i '' 's|  <div class=\"top-bar\">.*</div>||' /Users/mabelc/Desktop/mag/about.html)",
+      "Bash(sed -i '' 's/History repeats.<br>Be ready./History repeats.<br>So be ready./' /Users/mabelc/Desktop/mag/js/subscribe.js)",
+      "Bash(sed -i '' 's|<p class=\"sub-body\">New issues drop when history demands it.<br>Be the first to know.</p>||' /Users/mabelc/Desktop/mag/js/subscribe.js)"
+    ]
+  }
+}

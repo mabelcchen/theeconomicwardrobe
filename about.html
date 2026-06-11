@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — The Economic Wardrobe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400&family=IM+Fell+English:ital@1&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      background: #111;
+      color: #f0e4cc;
+      font-family: 'Playfair Display', serif;
+      height: 100%;
+    }
+
+    .bg-video {
+      position: fixed;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      opacity: 0.45;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* ── TOP BAR ── */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 40px;
+      border-bottom: 1px solid rgba(240,228,204,0.15);
+      position: relative;
+      z-index: 1;
+    }
+
+    .top-bar-left {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,228,204,0.5);
+    }
+
+    .top-bar-right {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(240,228,204,0.5);
+    }
+
+    /* ── BACK LINK ── */
+    .back-link {
+      display: inline-block;
+      margin: 18px 40px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      color: rgba(240,228,204,0.5);
+      text-decoration: none;
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+    .back-link:hover { color: #f0e4cc; }
+
+    /* ── SPREAD LAYOUT ── */
+    .spread {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 40px 60px;
+      min-height: 680px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* LEFT COLUMN */
+    .col-left {
+      padding-right: 48px;
+      border-right: 1px solid rgba(240,228,204,0.15);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Drop cap + script title */
+    .title-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      margin-bottom: 28px;
+    }
+
+    .drop-cap {
+      font-family: 'Playfair Display', serif;
+      font-size: 9rem;
+      font-weight: 900;
+      line-height: 0.78;
+      color: #f0e4cc;
+      margin-right: 4px;
+      flex-shrink: 0;
+    }
+
+    .script-title {
+      font-family: 'Playfair Display', serif;
+      font-style: normal;
+      font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.15;
+      color: #f0e4cc;
+      padding-top: 8px;
+    }
+
+    /* Body text */
+    .body-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem; font-weight: 400;
+      line-height: 1.65;
+      color: rgba(240,228,204,0.85);
+      margin-bottom: 32px;
+    }
+
+    .body-text p { margin-bottom: 1em; }
+
+    .body-text strong {
+      font-weight: 700;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin-top: auto;
+      padding: 12px 0 0;
+    }
+
+    .pull-quote .open-quote,
+    .pull-quote .close-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 0.5;
+      color: #f0e4cc;
+      display: block;
+    }
+
+    .pull-quote .open-quote { margin-bottom: 8px; }
+    .pull-quote .close-quote { text-align: right; margin-top: 4px; }
+
+    .pull-quote p {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.1rem, 2vw, 1.55rem);
+      font-weight: 400;
+      line-height: 1.4;
+      color: #f0e4cc;
+      padding: 0 8px;
+    }
+
+    /* RIGHT COLUMN — portrait */
+    .col-right {
+      padding-left: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portrait {
+      width: 100%;
+      flex: 1;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: grayscale(100%);
+      min-height: 500px;
+    }
+  </style>
+</head>
+<body>
+
+  <video class="bg-video" autoplay muted loop playsinline src="aboutme.mp4"></video>
+
+
+<a class="back-link" href="index.html">&#8592; Back to home</a>
+
+  <div class="spread">
+
+    <!-- LEFT -->
+    <div class="col-left">
+      <div class="title-block">
+        <span class="drop-cap">F</span>
+        <span class="script-title">ashion is never<br>just fashion.</span>
+      </div>
+
+      <div class="body-text">
+        <p>The Economic Wardrobe is an independent publication built on a single idea: that clothing has never been just about aesthetics. It has always been an economic document, shaped by trade routes, class structures, labor systems, and the uneven distribution of power and capital. What people wore across history was rarely a matter of personal taste. It was determined by who controlled the resources, who made the laws, and who profited from the systems that produced the fabric on their backs.</p>
+        <p>Each issue examines a different era through this lens, connecting what people wore to the economic forces that determined why. Every article traces the same fundamental question: who gets to decide what power looks like, and what happens to everyone who doesn't get a say? The answers are never simple, and they are never just about clothes.</p>
+        <p>The Economic Wardrobe exists to make people see clothing as the economic document it has always been. To look at a garment from any century and understand not just what it is but what it cost, who made it, who was allowed to wear it, and what system made sure it stayed that way.</p>
+      </div>
+    </div>
+
+    <!-- RIGHT — portrait image -->
+    <div class="col-right">
+      <img class="portrait" src="about.jpg" alt="About The Economic Wardrobe" />
+    </div>
+
+  </div>
+
+</body>
+</html>

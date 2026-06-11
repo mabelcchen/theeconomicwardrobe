@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Economic Wardrobe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      width: 100%; height: 100%;
+      overflow: hidden;
+      background: #1a1816;
+    }
+
+    /* ── BACKGROUND IMAGE ── */
+    .home-bg {
+      position: fixed;
+      inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      display: block;
+      z-index: 0;
+    }
+
+    /* ══════════════════════════════
+       TOP LEFT NAV
+    ══════════════════════════════ */
+    .top-left-nav {
+      position: fixed;
+      top: 28px;
+      left: 36px;
+      display: flex;
+      gap: 24px;
+      z-index: 20;
+    }
+
+    .nav-btn {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-btn:hover { color: #fff; }
+
+    /* ══════════════════════════════
+       LEFT PANEL — article cards
+    ══════════════════════════════ */
+    .left-panel {
+      position: fixed;
+      top: 20%;
+      bottom: 75px;
+      left: 8%;
+      width: 460px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      overflow-y: auto;
+    }
+
+    .left-panel::-webkit-scrollbar { display: none; }
+
+    .latest-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 16px;
+    }
+
+    .article-card {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      text-decoration: none;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      margin-bottom: 36px;
+      transition: opacity 0.2s;
+    }
+
+
+    .article-card:hover { opacity: 0.75; }
+
+    .card-thumb,
+    .card-thumb-placeholder {
+      width: 140px;
+      min-width: 140px;
+      height: 100px;
+      object-fit: cover;
+      display: block;
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 7px;
+      padding: 14px 18px;
+    }
+
+    .card-era {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.55rem;
+      font-weight: 300;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: rgba(255,255,255,0.88);
+    }
+  </style>
+</head>
+<body>
+
+  <img class="home-bg" src="web_cover.png" alt="The Economic Wardrobe" />
+
+  <!-- ── Top left nav ── -->
+  <div class="top-left-nav">
+    <a class="nav-btn" href="#" id="homeSubscribeBtn">subscribe</a>
+    <a class="nav-btn" href="about.html">about</a>
+  </div>
+
+  <!-- ── Left panel: article cards ── -->
+  <div class="left-panel">
+
+    <span class="latest-label">Latest</span>
+
+    <a class="article-card" href="article-90s.html">
+      <img class="card-thumb" src="1990s_cover.png" alt="" />
+      <div class="card-text">
+        <span class="card-era">The 1990s</span>
+        <span class="card-title">The Most Influential Decade in Fashion Was Broke the Whole Time</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="article-blackdeath.html">
+      <img class="card-thumb" src="med_cover.png" alt="" />
+      <div class="card-text">
+        <span class="card-era">Medieval Europe</span>
+        <span class="card-title">How the Black Death Gave the Working Class Their First Taste of Luxury</span>
+      </div>
+    </a>
+
+    <a class="article-card" href="article-byzantine.html">
+      <img class="card-thumb" src="byz_final.png" alt="" />
+      <div class="card-text">
+        <span class="card-era">Byzantine Empire</span>
+        <span class="card-title">The Color You Could Be Executed for Wearing</span>
+      </div>
+    </a>
+
+  </div>
+
+  <script src="js/subscribe.js"></script>
+</body>
+</html>
