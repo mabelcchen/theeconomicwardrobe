@@ -4,123 +4,384 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Color You Could Be Executed for Wearing — The Economic Wardrobe</title>
+  <meta name="description" content="In 550 AD, wearing purple in the Byzantine Empire without imperial permission was punishable by death. On Tyrian purple, sumptuary law, and an economic monopoly so total the social order depended on it." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Color You Could Be Executed for Wearing" />
+  <meta property="og:description" content="Tyrian purple, sumptuary law, and scarcity weaponized in the Byzantine Empire." />
+  <meta property="og:image" content="https://theeconomicwardrobe.netlify.app/byz_cover.png" />
+  <meta property="og:url" content="https://theeconomicwardrobe.netlify.app/article-byzantine" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/article-edit.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1a1816;
+      --ink: rgba(255,255,255,0.88);
+      --ink-soft: rgba(255,255,255,0.62);
+      --ink-faint: rgba(255,255,255,0.38);
+      --rule: rgba(255,255,255,0.12);
+      --purple: #6b3fa0;
+      --purple-soft: rgba(107,63,160,0.35);
+    }
+
+    html { background: var(--bg); scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--purple-soft); }
+
+    .article-back {
+      position: fixed;
+      top: 26px; left: 32px; z-index: 30;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--ink); }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      overflow: hidden;
+    }
+
+    .hero-arc {
+      position: absolute; top: -60px; left: -70px;
+      width: min(34vw, 340px); opacity: 0.85;
+      pointer-events: none;
+    }
+    .hero-arc--flip {
+      top: auto; left: auto; bottom: -60px; right: -70px;
+      transform: rotate(180deg);
+    }
+    .hero-necklace {
+      position: absolute; top: 4vh; right: 6vw;
+      width: min(22vw, 250px);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+    .hero-mosaic {
+      position: absolute; bottom: 2vh; left: 8vw;
+      width: min(13vw, 150px);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 30px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.3rem, 7vw, 4.4rem);
+      line-height: 1.08; letter-spacing: -0.01em;
+      max-width: 14ch; margin: 0 auto 30px;
+      position: relative; z-index: 2;
+    }
+
+    .byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .byline::before {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 0 auto 22px; background: var(--purple);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .shell {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 24px 90px;
+    }
+
+    .col { max-width: 600px; margin: 0 auto; }
+
+    .col p {
+      font-size: 1.02rem; font-weight: 300; line-height: 1.85;
+      margin-bottom: 1.7em;
+    }
+
+    .opener p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 3.4em;
+      float: left; line-height: 0.82;
+      padding: 0.06em 0.12em 0 0;
+      color: var(--purple);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.45rem; line-height: 1.3;
+      text-align: center; margin: 80px 0 30px;
+    }
+    h2::after {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 20px auto 0; background: var(--rule);
+    }
+
+    .standalone {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.5rem; line-height: 1.5; text-align: center;
+      max-width: 480px; margin: 56px auto; padding: 32px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    /* floating cutouts (desktop) */
+    .float-art {
+      display: none;
+      position: absolute;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.55));
+      pointer-events: none;
+      z-index: 1;
+    }
+    @media (min-width: 1040px) {
+      .float-art { display: block; }
+      .fa-pendant   { width: 176px; right: 1%;  top: 40px;   transform: rotate(2deg); }
+      .fa-painting  { width: 208px; left: 0.5%; top: 560px;  transform: rotate(-1.5deg); }
+      .fa-constant  { width: 211px; right: 0.5%; top: 1320px; transform: rotate(1.5deg); }
+      .fa-figure    { width: 131px; left: 2%;   top: 2050px; transform: rotate(-2deg); }
+      .fa-earrings  { width: 152px; right: 3%;  top: 2560px; transform: rotate(-2.5deg); }
+      .fa-couple    { width: 226px; left: 0.5%; top: 3060px; transform: rotate(1.5deg); }
+    }
+
+    /* inline figures (mobile fallback for the floats) */
+    .inline-art { margin: 40px auto; text-align: center; }
+    .inline-art img {
+      max-width: min(78%, 320px); max-height: 420px;
+      width: auto; height: auto;
+      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.5));
+    }
+    @media (min-width: 1040px) { .inline-art { display: none; } }
+
+    /* ── OBJECT PLATES ── */
+    .plate {
+      max-width: 760px;
+      margin: 90px auto;
+      text-align: center;
+    }
+    .plate img {
+      max-width: min(100%, 480px);
+      max-height: 520px; width: auto;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.5));
+    }
+    .plate-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--ink-faint);
+      margin: 26px auto 20px; max-width: 420px; line-height: 2;
+    }
+    .plate p {
+      font-size: 1rem; font-weight: 300; line-height: 1.85;
+      text-align: left; max-width: 600px; margin: 0 auto;
+    }
+
+    /* ── RUNWAY FINALE ── */
+    .runway {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 18px; max-width: 860px; margin: 60px auto;
+    }
+    .runway { align-items: center; }
+    .runway img {
+      width: auto; max-width: 100%; max-height: 560px;
+      display: block; margin: 0 auto;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.5));
+    }
+    .runway img:nth-child(2) { transform: translateY(26px); }
+    @media (max-width: 700px) {
+      .runway { grid-template-columns: 1fr; max-width: 340px; }
+      .runway img:nth-child(2) { transform: none; }
+    }
+    .runway-caption {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-faint); text-align: center; margin: 44px 0 0;
+    }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    /* footer */
+    .article-footer {
+      margin-top: 100px; padding-top: 34px;
+      border-top: 1px solid var(--rule);
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+    }
+    .article-footer a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-footer a:hover { color: var(--ink); }
+    a:focus-visible { outline: 1px solid var(--purple); outline-offset: 4px; }
+  </style>
 </head>
 <body>
 
-  <a href="index.html" class="article-back">&#8592;</a>
+  <a href="index.html" class="article-back">&#8592; The Economic Wardrobe</a>
 
-  <!-- ═══════════════════════════════
-       MAGAZINE VIEWER
-  ════════════════════════════════ -->
-  <div class="mag-viewer">
+  <!-- ── HERO ── -->
+  <header class="hero">
+    <img class="hero-arc" src="assets/byz/enamel_arc.webp" alt="" aria-hidden="true" />
+    <img class="hero-arc hero-arc--flip" src="assets/byz/enamel_arc.webp" alt="" aria-hidden="true" />
+    <img class="hero-necklace" src="assets/byz/necklace.webp" alt="Byzantine gold chain necklace with amethyst beads and a gold cross pendant" />
+    <img class="hero-mosaic" src="assets/byz/mosaic_justinian_sm.webp" alt="Byzantine mosaic figure in dark robes holding a golden vessel" />
+    <p class="eyebrow">The Byzantine Empire</p>
+    <h1>The Color You Could Be Executed for Wearing</h1>
+    <p class="byline">By Mabel Chen</p>
+  </header>
 
-    <div class="mag-spreads" id="magSpreads">
+  <main class="shell">
 
-      <!-- PREV / NEXT ARROWS -->
-      <button class="mag-arrow mag-arrow--prev" id="magPrev">&#8592;</button>
-      <button class="mag-arrow mag-arrow--next" id="magNext">&#8594;</button>
+    <!-- floating margin artifacts (desktop only) -->
+    <img class="float-art fa-pendant" src="assets/byz/pendant.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-painting" src="assets/byz/court_painting.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-constant" src="assets/byz/constantinople.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-figure" src="assets/byz/mosaic_figure.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-earrings" src="assets/byz/earrings.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-couple" src="assets/byz/couple.webp" alt="" aria-hidden="true" />
 
-      <!-- SPREAD 1 -->
-      <div class="mag-spread active" id="spread1">
-        <div class="mag-page-left canva-page">
-          <img src="byz_final_pages/1.png" alt="Page 1" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="byz_final_pages/2.png" alt="Page 2" />
-        </div>
+    <article>
+
+      <div class="col opener reveal">
+        <p>A color caused executions. Funded wars. Collapsed kingdoms. And it came from snail mucus.</p>
+
+        <p>In 550 AD, if you were caught wearing purple in the Byzantine Empire without imperial permission, you weren&rsquo;t fined or humiliated, you were killed. Not because the emperor was paranoid &mdash; though he was &mdash; but because that single color represented something far more dangerous than fashion. It represented an economic monopoly so total, so deliberately engineered, that the entire social order of the most powerful empire on earth depended on ordinary people never being able to afford it.</p>
       </div>
 
-      <!-- SPREAD 2 -->
-      <div class="mag-spread" id="spread2">
-        <div class="mag-page-left canva-page">
-          <img src="byz_final_pages/3.png" alt="Page 3" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="byz_final_pages/4.png" alt="Page 4" />
-        </div>
+      <p class="standalone reveal">This wasn&rsquo;t vanity. It was infrastructure.</p>
+
+      <div class="inline-art reveal"><img src="assets/byz/pendant.webp" alt="Gold Byzantine pendant with carved sapphire cameo surrounded by pearls and gemstones" /></div>
+
+      <div class="col reveal">
+        <p>But while the empress sat draped in silk and purple, her pearl-encrusted crown catching the gold mosaic light of the palace throne room &mdash; the workers who built that palace, who laid those stones, who wove that silk &mdash; wore undyed wool, because the empire made sure they had no other option.</p>
       </div>
 
-      <!-- SPREAD 3 -->
-      <div class="mag-spread" id="spread3">
-        <div class="mag-page-left canva-page">
-          <img src="byz_final_pages/5.png" alt="Page 5" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="byz_final_pages/6.png" alt="Page 6" />
-        </div>
+      <div class="inline-art reveal"><img src="assets/byz/court_painting.webp" alt="Painting of a Byzantine court interior with richly dressed figures" /></div>
+
+      <h2 class="reveal">What Made Byzantium Rich?</h2>
+
+      <div class="col reveal">
+        <p>To understand why a color could get you killed, you first need to understand what made the Byzantine Empire the wealthiest state in the medieval world for nearly a thousand years.</p>
+
+        <p>Constantinople sat at the exact intersection of Europe and Asia, a geographic accident that became the most profitable real estate in history. Every major trade route between East and West passed through it. Silk from China. Spices from India. Ivory from Africa. Gold from everywhere. The empire controlled the chokepoint through which all of it flowed.</p>
+
+        <p>But the Byzantines didn&rsquo;t just tax trade. They manufactured it. The state ran its own silk workshops &mdash; called ergasteria &mdash; directly controlled by the imperial government. Private citizens could not freely produce or sell silk. The emperor decided who made it, who sold it, who exported it, and most critically, who wore it.</p>
       </div>
 
-      <!-- SPREAD 4 -->
-      <div class="mag-spread" id="spread4">
-        <div class="mag-page-left canva-page">
-          <img src="byz_final_pages/7.png" alt="Page 7" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="byz_final_pages/8.png" alt="Page 8" />
-          <a href="index.html" class="return-home-btn">&#8592; Return Home</a>
-        </div>
+      <div class="inline-art reveal"><img src="assets/byz/constantinople.webp" alt="Illustration of the walled city of Constantinople with a gold signet ring in the foreground" /></div>
+
+      <h2 class="reveal">The Purple Deep Dive</h2>
+
+      <div class="col reveal">
+        <p>Tyrian purple came from a sea snail called Murex brandaris. Producing a single pound of dye required crushing approximately 250,000 of them. The smell of rotting mollusks permeated coastal towns for miles. And at its peak, one pound cost the equivalent of three years of an average worker&rsquo;s salary &mdash; pound for pound, worth more than gold.</p>
+
+        <p>The emperor&rsquo;s response was simple and ruthless: he made it illegal for anyone else to wear it. These were called sumptuary laws.</p>
+
+        <p>Wearing imperial purple without authorization wasn&rsquo;t a fashion faux pas, it was treason. The punishment was death, mutilation, or exile. Merchants who smuggled purple fabrics faced having their hands cut off. Foreign dignitaries arriving in purple were made to change before entering the palace.</p>
+
+        <p>The color became so powerful that Byzantine emperors were described as porphyrogennetos: &ldquo;born in the purple.&rdquo; Even being born near the color was a political statement.</p>
       </div>
 
-    </div><!-- /mag-spreads -->
+      <p class="standalone reveal">This was scarcity weaponized.</p>
 
-    <!-- DOTS -->
-    <div class="mag-dots">
-      <div class="mag-dot active"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-    </div>
+      <h2 class="reveal">What Everyone Else Wore</h2>
 
-  </div><!-- /mag-viewer -->
+      <div class="col reveal">
+        <p>For ordinary Byzantines &mdash; craftspeople, farmers, soldiers &mdash; clothing was defined entirely by economic necessity. Undyed wool. Cheap plant-based dyes in ochre and brown. Whatever you could make or afford within the strict boundaries the law allowed.</p>
 
-  <!-- MORE FROM -->
-  <div class="more-from-wrap"><video class="bg-video" autoplay muted loop playsinline src="background.mp4"></video><section class="more-from">
-    <h2 class="section-heading">More From The Economic Wardrobe</h2>
-    <div class="more-from-grid">
-      <article class="card">
-        <a href="article-90s.html" class="article-link">
-          <span class="category-label">Cultural Comment</span>
-          <h3 class="article-title article-title--card">The Most Influential Decade in Fashion Was Broke the Whole Time</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">The 1990s gave us the most copied aesthetic in history — born from economic anxiety.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="article-blackdeath.html" class="article-link">
-          <span class="category-label">Class &amp; Cloth</span>
-          <h3 class="article-title article-title--card">How the Black Death Gave the Working Class Their First Taste of Luxury</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">When the plague wiped out half of Europe, peasants could suddenly afford to dress above their station.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="index.html" class="article-link">
-          <span class="category-label">The Economic Wardrobe</span>
-          <h3 class="article-title article-title--card">Back to the Homepage</h3>
-          <p class="byline">All Issues</p>
-          <p class="article-blurb">Browse the full archive of fashion history through an economic lens.</p>
-        </a>
-      </article>
-    </div>
-  </section></div>
+        <p>The Byzantine state didn&rsquo;t just regulate the top, it regulated everything. Sumptuary laws dictated what colors, fabrics, and embellishments were appropriate for each social tier. Wearing above your station wasn&rsquo;t just simply socially awkward, it was illegal.</p>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-title">The Economic Wardrobe</p>
-      <nav class="footer-nav">
-        <a href="about.html">About</a><a href="#">Subscribe</a>
-      </nav>
-      <p class="footer-copy">&copy; 2024 The Economic Wardrobe. All rights reserved.</p>
-    </div>
-  </footer>
+        <p>Byzantine fashion was the most honest economic system in history. What you wore told everyone exactly what you were worth. And the law made sure it stayed that way.</p>
+      </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/editor.js"></script>
-  <script src="js/subscribe.js"></script>
+      <div class="inline-art reveal"><img src="assets/byz/earrings.webp" alt="Pair of intricate Byzantine gold basket earrings with filigree openwork" /></div>
+
+      <!-- ── OBJECT STUDIES ── -->
+
+      <figure class="plate reveal">
+        <img src="assets/byz/crown.webp" alt="The Crown of Constantine Monomachos, gold plaques decorated in cloisonné enamel" />
+        <figcaption class="plate-label">Crown of Constantine Monomachos, c. 1042 AD</figcaption>
+        <p>Few objects capture the Byzantine equation of wealth and power as completely as the Crown of Constantine Monomachos. Made around 1042 AD, its gold plaques are decorated in cloisonn&eacute; enamel &mdash; a painstaking technique requiring artisans to lay thousands of tiny colored glass fragments between hair-thin gold wires, then fire them at precise temperatures to fuse them permanently. The result is almost hallucinatory in its detail: the emperor Constantine IX stands at the center flanked by two empresses, all three figures robed in the blue, gold, and jewel-toned colors that only the imperial court could legally commission. This was not jewelry in any ordinary sense, but a wearable economic statement.</p>
+      </figure>
+
+      <figure class="plate reveal">
+        <img src="assets/byz/theodora.webp" alt="Mosaic of Empress Theodora with jeweled collar and crown, Basilica of San Vitale, Ravenna" />
+        <figcaption class="plate-label">Empress Theodora, San Vitale Basilica, Ravenna, c. 547 AD</figcaption>
+        <p>The mosaic of Empress Theodora, completed around 547 AD in Ravenna&rsquo;s Basilica of San Vitale, is the closest thing history has left us to a photograph of Byzantine power dressing. Her robes, now darkened with age, were once the deep violent purple that defined imperial authority across the empire. The jeweled collar alone represented years of an ordinary worker&rsquo;s wages. Every element of her dress was a calculated economic signal. Theodora didn&rsquo;t just dress to impress. She dressed to remind everyone in the room exactly who held the power &mdash; and what it cost to cross her.</p>
+      </figure>
+
+      <figure class="plate reveal">
+        <img src="assets/byz/skylitzes.webp" alt="Illustration from the Madrid Skylitzes manuscript showing laborers in simple colored tunics" />
+        <figcaption class="plate-label">Madrid Skylitzes, 12th Century. Biblioteca Nacional de Espa&ntilde;a, Madrid</figcaption>
+        <p>This illustration from the Madrid Skylitzes &mdash; a 12th century Byzantine manuscript and one of the only surviving visual records of ordinary Byzantine life &mdash; shows laborers at work in their everyday dress. Simple tunics in basic blue, red, and green. No embellishment, no silk, no gold. Just functional clothing for people whose entire lives were spent building an empire they were legally forbidden to dress like. The contrast with the imperial court could not be more complete. Where Theodora wore purple worth more than gold, these men wore whatever undyed wool the state&rsquo;s rigid sumptuary laws permitted them.</p>
+      </figure>
+
+      <!-- ── FINALE ── -->
+
+      <h2 class="reveal">The Empire Fell. The Aesthetic Never Did.</h2>
+
+      <div class="col reveal">
+        <p>In 1453, Ottoman forces breached the walls of Constantinople and the Byzantine Empire ceased to exist. The silk monopoly collapsed. The sumptuary laws dissolved. And yet.</p>
+
+        <p>In 2013, Dolce &amp; Gabbana sent models down the runway in one of the most explicitly Byzantine collections in modern fashion history. The references were total. Dresses were printed to replicate the gold tesserae mosaic work of San Vitale, the same basilica where Theodora&rsquo;s portrait still watches from the wall. Byzantine saint figures were embroidered directly onto white lace in sequins and beading. The crowns referenced imperial Byzantine headwear almost exactly &mdash; layered gold, encrusted with gemstones and pearl drops, the same construction as the Crown of Constantine Monomachos made nearly a thousand years earlier. Gold filigree corsets replicated the cloisonn&eacute; enamel technique of Byzantine goldsmithing.</p>
+      </div>
+
+      <div class="runway reveal">
+        <img src="assets/byz/dg_corset.webp" alt="Dolce and Gabbana 2013 runway look with jeweled gold corset and Byzantine cross earrings" />
+        <img src="assets/byz/dg_mosaic_dress.webp" alt="Dolce and Gabbana 2013 runway dress printed with Byzantine mosaic saint imagery" />
+        <img src="assets/byz/dg_white_dress.webp" alt="Dolce and Gabbana 2013 white lace runway dress with embroidered Byzantine saint figure and gold crown" />
+      </div>
+      <p class="runway-caption reveal">Dolce &amp; Gabbana, Fall/Winter 2013</p>
+
+      <div class="col reveal">
+        <p>What Dolce &amp; Gabbana understood was the same thing the Byzantine emperors had known for a thousand years &mdash; this aesthetic communicates wealth and power more effectively than almost anything else in fashion history.</p>
+
+        <p>The Byzantines invented that language. Dolce &amp; Gabbana just charged &euro;10,000 a piece to speak it.</p>
+      </div>
+
+    </article>
+
+    <footer class="article-footer">
+      <a href="article-byzantine-print.html">View the print edition</a>
+      <a href="index.html">&#8592; Return home</a>
+    </footer>
+
+  </main>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
 </body>
 </html>

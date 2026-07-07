@@ -4,115 +4,313 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Most Influential Decade in Fashion Was Broke the Whole Time — The Economic Wardrobe</title>
+  <meta name="description" content="The 1990s didn't invent minimalism. They couldn't afford anything else. On recession, Calvin Klein, grunge, hip hop, and the economics behind the decade that stripped fashion bare." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Most Influential Decade in Fashion Was Broke the Whole Time" />
+  <meta property="og:description" content="Recession, minimalism, grunge, and hip hop: the economics of 1990s fashion." />
+  <meta property="og:image" content="https://theeconomicwardrobe.netlify.app/1990s_cover.png" />
+  <meta property="og:url" content="https://theeconomicwardrobe.netlify.app/article-90s" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/article-edit.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1a1816;
+      --ink: rgba(255,255,255,0.88);
+      --ink-soft: rgba(255,255,255,0.62);
+      --ink-faint: rgba(255,255,255,0.38);
+      --rule: rgba(255,255,255,0.12);
+      --accent: #9c948a;
+      --accent-soft: rgba(156,148,138,0.3);
+    }
+
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    ::selection { background: var(--accent-soft); }
+
+    .article-back {
+      position: fixed; top: 26px; left: 32px; z-index: 30;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--ink); }
+
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px; overflow: hidden;
+    }
+    .hero-art-r {
+      position: absolute; top: 8vh; right: 5vw;
+      width: min(20vw, 220px);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+    .hero-art-l {
+      position: absolute; bottom: 4vh; left: 6vw;
+      width: min(20vw, 230px);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 30px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.3rem, 7vw, 4.2rem);
+      line-height: 1.08; letter-spacing: -0.01em;
+      max-width: 16ch; margin: 0 auto 30px;
+      position: relative; z-index: 2;
+    }
+    .byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .byline::before {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 0 auto 22px; background: var(--accent);
+    }
+
+    .shell { position: relative; max-width: 1100px; margin: 0 auto; padding: 40px 24px 90px; }
+    .col { max-width: 600px; margin: 0 auto; }
+    .col p { font-size: 1.02rem; font-weight: 300; line-height: 1.85; margin-bottom: 1.7em; }
+
+    .opener p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 3.4em;
+      float: left; line-height: 0.82;
+      padding: 0.06em 0.12em 0 0;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.45rem; line-height: 1.3;
+      text-align: center; margin: 80px 0 30px;
+    }
+    h2::after {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 20px auto 0; background: var(--rule);
+    }
+
+    .standalone {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.5rem; line-height: 1.5; text-align: center;
+      max-width: 480px; margin: 56px auto; padding: 32px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .float-art {
+      display: none; position: absolute;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.55));
+      pointer-events: none; z-index: 1;
+    }
+    @media (min-width: 1040px) {
+      .float-art { display: block; }
+      .fa-1 { width: 151px; right: 1.5%; top: 120px;  transform: rotate(2deg); }
+      .fa-2 { width: 186px; left: 0.5%;  top: 900px;  transform: rotate(-1.5deg); }
+      .fa-3 { width: 157px; right: 1%;   top: 1650px; transform: rotate(1.5deg); }
+      .fa-4 { width: 167px; left: 1%;    top: 2400px; transform: rotate(-2deg); }
+      .fa-5 { width: 117px; right: 2.5%; top: 3050px; transform: rotate(2.5deg); }
+    }
+    .inline-art { margin: 40px auto; text-align: center; }
+    .inline-art img {
+      max-width: min(78%, 320px); max-height: 420px;
+      width: auto; height: auto;
+      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.5));
+    }
+    @media (min-width: 1040px) { .inline-art { display: none; } }
+
+    .plate { max-width: 760px; margin: 90px auto; text-align: center; }
+    .plate img {
+      max-width: min(100%, 480px);
+      max-height: 520px; width: auto;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.5));
+    }
+    .plate-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.24em; text-transform: uppercase;
+      color: var(--ink-faint);
+      margin: 26px auto 0; max-width: 420px; line-height: 2;
+    }
+
+    .duo {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 18px; max-width: 640px; margin: 60px auto; align-items: start;
+    }
+    .duo img {
+      width: auto; max-width: 100%; max-height: 430px;
+      display: block; margin: 0 auto;
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.5));
+    }
+    .duo img:nth-child(2) { transform: translateY(30px) rotate(1.5deg); }
+    @media (max-width: 700px) {
+      .duo { grid-template-columns: 1fr; max-width: 320px; }
+      .duo img:nth-child(2) { transform: none; }
+    }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    .article-footer {
+      margin-top: 100px; padding-top: 34px;
+      border-top: 1px solid var(--rule);
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+    }
+    .article-footer a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-footer a:hover { color: var(--ink); }
+    a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+  </style>
 </head>
 <body>
 
-  <a href="index.html" class="article-back">&#8592;</a>
+  <a href="index.html" class="article-back">&#8592; The Economic Wardrobe</a>
 
-  <div class="mag-viewer">
+  <header class="hero">
+    <img class="hero-art-r" src="assets/90s/p1_1.webp" alt="1990s fashion photograph from the print edition cover" />
+    <img class="hero-art-l" src="assets/90s/p1_2.webp" alt="1990s fashion photograph from the print edition cover" />
+    <p class="eyebrow">The 1990s</p>
+    <h1>The Most Influential Decade in Fashion Was Broke the Whole Time</h1>
+    <p class="byline">By Mabel Chen</p>
+  </header>
 
-    <div class="mag-spreads" id="magSpreads">
+  <main class="shell">
 
-      <button class="mag-arrow mag-arrow--prev" id="magPrev">&#8592;</button>
-      <button class="mag-arrow mag-arrow--next" id="magNext">&#8594;</button>
+    <img class="float-art fa-1" src="assets/90s/p2_1.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-2" src="assets/90s/p3_2.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-3" src="assets/90s/p4_1.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-4" src="assets/90s/p5_2.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-5" src="assets/90s/p6_3.webp" alt="" aria-hidden="true" />
 
-      <!-- SPREAD 1 -->
-      <div class="mag-spread active" id="spread1">
-        <div class="mag-page-left canva-page">
-          <img src="1990s_pages/1.png" alt="Page 1" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="1990s_pages/2.png" alt="Page 2" />
-        </div>
+    <article>
+
+      <div class="col opener reveal">
+        <p>The 1990s didn&rsquo;t invent minimalism. They couldn&rsquo;t afford anything else.</p>
+
+        <p>In 1990, the United States entered a recession. Unemployment climbed. Consumer confidence collapsed. And on the runways of New York, something quietly revolutionary was happening: fashion was stripping itself bare. No more shoulder pads. No more power suits. No more gold chains and logomania. Just clean lines, neutral colors, and the deliberate absence of everything the 1980s had celebrated.</p>
       </div>
 
-      <!-- SPREAD 2 -->
-      <div class="mag-spread" id="spread2">
-        <div class="mag-page-left canva-page">
-          <img src="1990s_pages/3.png" alt="Page 3" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="1990s_pages/4.png" alt="Page 4" />
-        </div>
+      <p class="standalone reveal">It was an economic choice, not an aesthetic one.</p>
+
+      <h2 class="reveal">What Broke the 80s</h2>
+
+      <div class="col reveal">
+        <p>To understand the 90s you have to understand what it was reacting against.</p>
+
+        <p>The 1980s were defined by visible, aggressive wealth. Reagan&rsquo;s America. The rise of the yuppie. Wall Street. Dynasty shoulder pads. Versace logomania. Fashion in the 80s functioned exactly the way Byzantine purple had a thousand years earlier &mdash; as a loud, deliberate announcement of economic status. The louder the better. The more expensive the more powerful.</p>
+
+        <p>Then the economy collapsed.</p>
+
+        <p>The early 1990s recession hit hard and fast. Stock markets crashed. Unemployment spiked. The savings and loan crisis wiped out middle class wealth across America. The conspicuous consumption that had defined the previous decade suddenly felt not just excessive but obscene. Wearing a Versace logo across your chest when your neighbor had just lost their job was a different kind of statement than it had been in 1985.</p>
+
+        <p>Fashion, as it always does, responded immediately.</p>
       </div>
 
-      <!-- SPREAD 3 -->
-      <div class="mag-spread" id="spread3">
-        <div class="mag-page-left canva-page">
-          <img src="1990s_pages/5.png" alt="Page 5" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="1990s_pages/6.png" alt="Page 6" />
-        </div>
+      <div class="inline-art reveal"><img src="assets/90s/p2_1.webp" alt="Photograph from the print edition, 1980s section" /></div>
+
+      <h2 class="reveal">The Minimalism Deep Dive</h2>
+
+      <div class="col reveal">
+        <p>In 1992 Calvin Klein sent a collection down the runway that would define the decade. No embellishment, no color, no logos. Just perfectly cut suits, slip dresses, and clean white shirts in muted neutrals &mdash; cream, grey, black, beige. The clothes were expensive but they didn&rsquo;t look it. That was entirely the point.</p>
+
+        <p>This was minimalism as economic camouflage. In a decade defined by recession anxiety, dressing down became the new dressing up. The truly wealthy could afford to stop announcing themselves. They didn&rsquo;t need logos anymore. The cut, the fabric, the fit whispered money to anyone who knew how to listen. Everyone else was left guessing.</p>
       </div>
 
-      <!-- SPREAD 4 — closing single page -->
-      <div class="mag-spread" id="spread4">
-        <div class="mag-page-left canva-page">
-          <img src="1990s_pages/7.png" alt="Page 7" />
-          <a href="index.html" class="return-home-btn">&#8592; Return Home</a>
-        </div>
-        <div class="mag-page-right canva-page" style="background:#1a1816;"></div>
+      <figure class="plate reveal">
+        <img src="assets/90s/p3_1.webp" alt="Photograph from the print edition, minimalism section" />
+      </figure>
+
+      <div class="col reveal">
+        <p>Carolyn Bessette-Kennedy became the decade&rsquo;s most iconic style figure not because she wore expensive clothes but because she wore expensive clothes that looked simple. A white slip dress. A clean wool coat. Nothing that screamed wealth &mdash; everything that implied it. She was the human embodiment of 90s minimalism&rsquo;s central economic paradox: the most expensive thing you could wear was something that looked like it cost nothing.</p>
       </div>
 
-    </div><!-- /mag-spreads -->
+      <div class="inline-art reveal"><img src="assets/90s/p4_1.webp" alt="Photograph from the print edition, Carolyn Bessette-Kennedy section" /></div>
 
-    <div class="mag-dots">
-      <div class="mag-dot active"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-    </div>
+      <h2 class="reveal">What Everyone Else Wore</h2>
 
-  </div><!-- /mag-viewer -->
+      <div class="col reveal">
+        <p>While Calvin Klein was perfecting the art of expensive simplicity, the rest of America was dressing for an entirely different economic reality.</p>
 
-  <div class="more-from-wrap"><video class="bg-video" autoplay muted loop playsinline src="background.mp4"></video><section class="more-from">
-    <h2 class="section-heading">More From The Economic Wardrobe</h2>
-    <div class="more-from-grid">
-      <article class="card">
-        <a href="article-byzantine.html" class="article-link">
-          <span class="category-label">Power &amp; Pigment</span>
-          <h3 class="article-title article-title--card">The Color You Could Be Executed for Wearing</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">They built the empire. They just weren't allowed to dress like it.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="article-blackdeath.html" class="article-link">
-          <span class="category-label">Class &amp; Cloth</span>
-          <h3 class="article-title article-title--card">How the Black Death Gave the Working Class Their First Taste of Luxury</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">When the plague wiped out half of Europe, peasants could suddenly afford to dress above their station.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="index.html" class="article-link">
-          <span class="category-label">The Economic Wardrobe</span>
-          <h3 class="article-title article-title--card">Back to the Homepage</h3>
-          <p class="byline">All Issues</p>
-          <p class="article-blurb">Browse the full archive of fashion history through an economic lens.</p>
-        </a>
-      </article>
-    </div>
-  </section></div>
+        <p>Grunge emerged from Seattle&rsquo;s working class music scene and spread across the country with a speed that had everything to do with economics and nothing to do with fashion. Flannel shirts because they were cheap and warm. Ripped jeans because you kept wearing them after they fell apart. Thrift store layers because that&rsquo;s what you could afford. Kurt Cobain didn&rsquo;t style himself, he just wore what he had.</p>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-title">The Economic Wardrobe</p>
-      <nav class="footer-nav">
-        <a href="about.html">About</a><a href="#">Subscribe</a>
-      </nav>
-      <p class="footer-copy">&copy; 2024 The Economic Wardrobe. All rights reserved.</p>
-    </div>
-  </footer>
+        <p>The fashion industry&rsquo;s response was immediate and telling. By 1993 Marc Jacobs had sent grunge down the Perry Ellis runway &mdash; flannel shirts, thermal underwear, and worn-in boots reinterpreted in luxury fabrics at luxury prices. Perry Ellis fired him for it. The fashion establishment wasn&rsquo;t ready to admit that the most culturally relevant aesthetic of the decade had been invented by people who shopped at thrift stores.</p>
 
-  <script src="js/main.js"></script>
-  <script src="js/editor.js"></script>
-  <script src="js/subscribe.js"></script>
+        <p>Meanwhile hip hop was building its own parallel fashion economy entirely. Influenced by a different set of economic pressures &mdash; systemic poverty, the crack epidemic, the aftermath of Reaganomics in Black communities across America &mdash; hip hop fashion was doing something completely opposite to minimalism. It was maximalist, deliberate, and loud. Oversized everything. Timberlands. Gold jewelry. Tommy Hilfiger, FUBU, Polo Ralph Lauren worn in ways their designers never intended. This wasn&rsquo;t logomania for the sake of excess, it was a reclamation of visibility by communities that had been economically and socially erased. The logo wasn&rsquo;t showing off, but rather showing up.</p>
+      </div>
+
+      <figure class="plate reveal">
+        <img src="assets/90s/p5_1.webp" alt="Photograph from the print edition, hip hop fashion section" />
+      </figure>
+
+      <p class="standalone reveal">Three completely different economic realities. Three completely different wardrobes. One decade.</p>
+
+      <h2 class="reveal">When Minimalism Cracked</h2>
+
+      <div class="col reveal">
+        <p>By the mid-90s the recession had eased and the economy was recovering. Fashion&rsquo;s restraint began quietly loosening.</p>
+
+        <p>The dot-com boom was coming. A new generation of suddenly wealthy young people was about to arrive with money to spend and no interest in the quiet understatement of Calvin Klein minimalism.</p>
+
+        <p>By 1997 Tom Ford had transformed Gucci from a near-bankrupt heritage brand into the decade&rsquo;s most provocative fashion house &mdash; velvet suits, plunging necklines, unapologetic sex and wealth on display. The minimalism era wasn&rsquo;t over yet but its grip was slipping.</p>
+
+        <p>Then 1999 arrived. The economy was booming. Y2K anxiety was everywhere. And fashion was already moving toward the maximalism, logomania, and visible excess that would define the 2000s completely.</p>
+      </div>
+
+      <div class="duo reveal">
+        <img src="assets/90s/p6_1.webp" alt="Photograph from the print edition, Tom Ford era Gucci" />
+        <img src="assets/90s/p6_2.webp" alt="Photograph from the print edition, Tom Ford era Gucci" />
+      </div>
+
+      <h2 class="reveal">What Comes Next</h2>
+
+      <div class="col reveal">
+        <p>The 2000s arrived with money, confidence, and absolutely no restraint. Paris Hilton. Von Dutch trucker hats. Juicy Couture tracksuits. Visible thongs and low rise jeans.</p>
+
+        <p>But underneath the maximalism something structural was shifting. Fast fashion was arriving, globalization was moving garment production overseas. And the 2008 financial crisis was coming, an economic collapse so total it would reshape the entire system that produced their clothes.</p>
+
+        <p>The decade that dressed like it had nothing to lose was about to lose everything. That&rsquo;s next.</p>
+      </div>
+
+    </article>
+
+    <footer class="article-footer">
+      <a href="article-90s-print.html">View the print edition</a>
+      <a href="index.html">&#8592; Return home</a>
+    </footer>
+
+  </main>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
 </body>
 </html>

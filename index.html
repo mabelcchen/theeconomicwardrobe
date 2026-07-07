@@ -3,165 +3,350 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Economic Wardrobe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet" />
+  <title>The Economic Wardrobe — A Journal of Dress, Power, and Capital</title>
+  <meta name="description" content="An independent fashion-economics journal examining how economic systems have shaped fashion history. Clothing is an economic document." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Economic Wardrobe" />
+  <meta property="og:description" content="A Journal of Dress, Power, and Capital." />
+  <meta property="og:url" content="https://theeconomicwardrobe.netlify.app/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500&family=Inter:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
-      width: 100%; height: 100%;
-      overflow: hidden;
-      background: #1a1816;
+    :root {
+      --bg: #1a1816;
+      --ink: rgba(255,255,255,0.9);
+      --ink-soft: rgba(255,255,255,0.64);
+      --ink-faint: rgba(255,255,255,0.4);
+      --rule: rgba(255,255,255,0.14);
+      --rule-strong: rgba(255,255,255,0.3);
+      --cream: #f0ebe0;
+      --byz: #6b3fa0;
+      --nineties: #9c948a;
+      --med: #7a2f2f;
     }
 
-    /* ── BACKGROUND IMAGE ── */
-    .home-bg {
-      position: fixed;
-      inset: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      display: block;
-      z-index: 0;
+    html { background: var(--bg); }
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    ::selection { background: rgba(107,63,160,0.35); }
+
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 34px clamp(20px, 4vw, 56px) 60px;
+      position: relative;
     }
 
-    /* ══════════════════════════════
-       TOP LEFT NAV
-    ══════════════════════════════ */
-    .top-left-nav {
-      position: fixed;
-      top: 28px;
-      left: 36px;
+    /* ── TOP RULE LINE ── */
+    .journal-line {
       display: flex;
-      gap: 24px;
-      z-index: 20;
-    }
-
-    .nav-btn {
-      font-family: 'Playfair Display', serif;
-      font-size: 0.75rem;
+      justify-content: space-between;
+      align-items: baseline;
+      border-top: 1px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule);
+      padding: 10px 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
       font-weight: 400;
-      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .journal-line nav { display: flex; gap: 26px; }
+    .journal-line a {
+      color: var(--ink-soft);
       text-decoration: none;
       transition: color 0.2s;
     }
+    .journal-line a:hover { color: var(--ink); }
 
-    .nav-btn:hover { color: #fff; }
-
-    /* ══════════════════════════════
-       LEFT PANEL — article cards
-    ══════════════════════════════ */
-    .left-panel {
-      position: fixed;
-      top: 20%;
-      bottom: 75px;
-      left: 8%;
-      width: 460px;
-      z-index: 10;
-      display: flex;
-      flex-direction: column;
-      overflow-y: auto;
+    /* ── MASTHEAD ── */
+    .masthead {
+      text-align: center;
+      padding: clamp(48px, 8vh, 90px) 0 0;
+      position: relative;
+    }
+    .masthead h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.6rem, 7.2vw, 5.4rem);
+      line-height: 1.02;
+      letter-spacing: -0.015em;
+    }
+    .masthead h1 .amp {
+      font-style: italic;
+      font-weight: 500;
+    }
+    .tagline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem;
+      font-weight: 400;
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 26px;
     }
 
-    .left-panel::-webkit-scrollbar { display: none; }
+    .double-rule {
+      margin: 34px auto 0;
+      max-width: 620px;
+      border-top: 1px solid var(--rule-strong);
+      border-bottom: 1px solid var(--rule-strong);
+      height: 4px;
+    }
 
-    .latest-label {
+    .epigraph {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(1.05rem, 1.8vw, 1.3rem);
+      color: var(--ink-soft);
+      text-align: center;
+      max-width: 520px;
+      margin: 40px auto 0;
+      line-height: 1.6;
+    }
+    .epigraph::after {
+      content: "— the journal’s thesis";
+      display: block;
       font-family: 'Inter', sans-serif;
-      font-size: 0.6rem;
-      font-weight: 500;
+      font-style: normal;
+      font-size: 0.55rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: var(--ink-faint);
+      margin-top: 16px;
+    }
+
+    /* marginalia artifacts around the masthead */
+    .marginalia {
+      position: absolute;
+      filter: drop-shadow(0 18px 36px rgba(0,0,0,0.55));
+      pointer-events: none;
+      opacity: 0.95;
+    }
+    .mg-necklace { width: clamp(90px, 12vw, 170px); top: -2px; right: -1%; }
+    .mg-crown    { width: clamp(100px, 12vw, 180px); top: 20px; left: -1%; transform: rotate(-3deg); }
+
+    /* ── CONTENTS ── */
+    .contents-label {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin: clamp(56px, 9vh, 96px) 0 0;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .contents-label::before,
+    .contents-label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: clamp(28px, 4vw, 56px);
+      margin-top: 54px;
+    }
+
+    .entry {
+      text-decoration: none;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      transition: transform 0.35s ease;
+    }
+    .entry:hover { transform: translateY(-4px); }
+
+    .entry-art {
+      height: 240px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+    .entry-art img {
+      max-height: 100%;
+      max-width: 82%;
+      filter: drop-shadow(0 20px 40px rgba(0,0,0,0.55));
+      transition: transform 0.35s ease;
+    }
+    .entry:hover .entry-art img { transform: rotate(-1.5deg) scale(1.02); }
+
+    .entry-no {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+    }
+
+    .entry-era {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-bottom: 16px;
+    }
+    .entry-era::after {
+      content: "";
+      display: block;
+      width: 22px;
+      height: 1px;
+      margin: 14px auto 0;
+      background: var(--accent, var(--rule-strong));
+    }
+    .entry--byz { --accent: var(--byz); }
+    .entry--90s { --accent: var(--nineties); }
+    .entry--med { --accent: var(--med); }
+
+    .entry-title {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: clamp(1.05rem, 1.55vw, 1.3rem);
+      line-height: 1.35;
       margin-bottom: 16px;
     }
 
-    .article-card {
-      display: flex;
-      flex-direction: row;
-      align-items: stretch;
-      text-decoration: none;
-      border-top: 1px solid rgba(255,255,255,0.12);
-      margin-bottom: 36px;
-      transition: opacity 0.2s;
-    }
-
-
-    .article-card:hover { opacity: 0.75; }
-
-    .card-thumb,
-    .card-thumb-placeholder {
-      width: 140px;
-      min-width: 140px;
-      height: 100px;
-      object-fit: cover;
-      display: block;
-      background: rgba(255,255,255,0.08);
-      flex-shrink: 0;
-    }
-
-    .card-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      gap: 7px;
-      padding: 14px 18px;
-    }
-
-    .card-era {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.55rem;
+    .entry-dek {
+      font-family: 'Source Serif 4', serif;
+      font-style: italic;
       font-weight: 300;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--ink-soft);
+      max-width: 300px;
+      margin: 0 auto 20px;
     }
 
-    .card-title {
+    .entry-read {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.56rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: auto;
+      transition: color 0.2s;
+    }
+    .entry:hover .entry-read { color: var(--ink); }
+
+    /* ── COLOPHON ── */
+    .colophon {
+      margin-top: clamp(70px, 11vh, 120px);
+      border-top: 1px solid var(--rule);
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.56rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .colophon em {
       font-family: 'Playfair Display', serif;
-      font-size: 0.88rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: rgba(255,255,255,0.88);
+      font-style: italic;
+      text-transform: none;
+      letter-spacing: 0.02em;
+      font-size: 0.8rem;
+      color: var(--ink-soft);
+    }
+
+    a:focus-visible { outline: 1px solid var(--ink-soft); outline-offset: 4px; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 860px) {
+      .toc { grid-template-columns: 1fr; gap: 60px; }
+      .entry-art { height: 200px; }
+      .mg-necklace { width: 84px; right: -3%; }
+      .mg-crown { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <img class="home-bg" src="web_cover.png" alt="The Economic Wardrobe" />
+  <div class="page">
 
-  <!-- ── Top left nav ── -->
-  <div class="top-left-nav">
-    <a class="nav-btn" href="#" id="homeSubscribeBtn">subscribe</a>
-    <a class="nav-btn" href="about.html">about</a>
-  </div>
+    <div class="journal-line">
+      <span>Vol. I &mdash; 2026</span>
+      <nav>
+        <a href="#" id="homeSubscribeBtn">Subscribe</a>
+        <a href="about.html">About</a>
+      </nav>
+    </div>
 
-  <!-- ── Left panel: article cards ── -->
-  <div class="left-panel">
+    <header class="masthead">
+      <img class="marginalia mg-necklace" src="assets/byz/necklace.webp" alt="" aria-hidden="true" />
+      <img class="marginalia mg-crown" src="assets/misc/bags.webp" alt="" aria-hidden="true" />
+      <h1>The Economic<br />Wardrobe</h1>
+      <p class="tagline">A Journal of Dress, Power, <span class="amp">&amp;</span> Capital</p>
+      <div class="double-rule"></div>
+      <p class="epigraph">&ldquo;Fashion is never just fashion.&rdquo;</p>
+    </header>
 
-    <span class="latest-label">Latest</span>
+    <div class="contents-label">Contents</div>
 
-    <a class="article-card" href="article-90s.html">
-      <img class="card-thumb" src="1990s_cover.png" alt="" />
-      <div class="card-text">
-        <span class="card-era">The 1990s</span>
-        <span class="card-title">The Most Influential Decade in Fashion Was Broke the Whole Time</span>
-      </div>
-    </a>
+    <div class="toc">
 
-    <a class="article-card" href="article-blackdeath.html">
-      <img class="card-thumb" src="med_cover.png" alt="" />
-      <div class="card-text">
-        <span class="card-era">Medieval Europe</span>
-        <span class="card-title">How the Black Death Gave the Working Class Their First Taste of Luxury</span>
-      </div>
-    </a>
+      <a class="entry entry--90s" href="article-90s.html">
+        <div class="entry-art"><img src="assets/90s/nokia.webp" alt="" /></div>
+        <span class="entry-no">No. iii</span>
+        <span class="entry-era">The 1990s</span>
+        <span class="entry-title">The Most Influential Decade in Fashion Was Broke the Whole Time</span>
+        <span class="entry-dek">Recession minimalism, grunge, and hip hop &mdash; three economic realities sharing one wardrobe-defining decade.</span>
+        <span class="entry-read">Read the essay &rarr;</span>
+      </a>
 
-    <a class="article-card" href="article-byzantine.html">
-      <img class="card-thumb" src="byz_final.png" alt="" />
-      <div class="card-text">
-        <span class="card-era">Byzantine Empire</span>
-        <span class="card-title">The Color You Could Be Executed for Wearing</span>
-      </div>
-    </a>
+      <a class="entry entry--med" href="article-blackdeath.html">
+        <div class="entry-art"><img src="assets/med/p1_1.webp" alt="" /></div>
+        <span class="entry-no">No. ii</span>
+        <span class="entry-era">Medieval Europe</span>
+        <span class="entry-title">How the Black Death Gave the Working Class Their First Taste of Luxury</span>
+        <span class="entry-dek">The plague that doubled wages and put dyed cloth on the people the law had dressed in undyed wool.</span>
+        <span class="entry-read">Read the essay &rarr;</span>
+      </a>
+
+      <a class="entry entry--byz" href="article-byzantine.html">
+        <div class="entry-art"><img src="assets/byz/mosaic_figure.webp" alt="" /></div>
+        <span class="entry-no">No. i</span>
+        <span class="entry-era">Byzantine Empire</span>
+        <span class="entry-title">The Color You Could Be Executed for Wearing</span>
+        <span class="entry-dek">Tyrian purple, sumptuary law, and scarcity weaponized by the wealthiest state of the medieval world.</span>
+        <span class="entry-read">Read the essay &rarr;</span>
+      </a>
+
+    </div>
+
+    <footer class="colophon">
+      <span><em>Written &amp; edited by Mabel Chen</em></span>
+      <span>&copy; 2026 The Economic Wardrobe</span>
+    </footer>
 
   </div>
 

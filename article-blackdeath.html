@@ -4,117 +4,264 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>How the Black Death Gave the Working Class Their First Taste of Luxury — The Economic Wardrobe</title>
+  <meta name="description" content="The Black Death was the most radical economic redistribution in European history, and it showed up in what people wore almost immediately. On feudalism, sumptuary law, and the plague that broke the medieval wardrobe open." />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How the Black Death Gave the Working Class Their First Taste of Luxury" />
+  <meta property="og:description" content="Feudalism, sumptuary law, and the plague that redistributed the medieval wardrobe." />
+  <meta property="og:image" content="https://theeconomicwardrobe.netlify.app/med_cover.png" />
+  <meta property="og:url" content="https://theeconomicwardrobe.netlify.app/article-blackdeath" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/article-edit.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #1a1816;
+      --ink: rgba(255,255,255,0.88);
+      --ink-soft: rgba(255,255,255,0.62);
+      --ink-faint: rgba(255,255,255,0.38);
+      --rule: rgba(255,255,255,0.12);
+      --accent: #7a2f2f;
+      --accent-soft: rgba(122,47,47,0.35);
+    }
+
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body {
+      background: var(--bg); color: var(--ink);
+      font-family: 'Source Serif 4', Georgia, serif;
+      -webkit-font-smoothing: antialiased; overflow-x: hidden;
+    }
+    ::selection { background: var(--accent-soft); }
+
+    .article-back {
+      position: fixed; top: 26px; left: 32px; z-index: 30;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-back:hover { color: var(--ink); }
+
+    .hero {
+      position: relative; min-height: 92vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 120px 24px 80px; overflow: hidden;
+    }
+    .hero-art {
+      position: absolute; top: 6vh; right: 5vw;
+      width: min(22vw, 250px);
+      filter: drop-shadow(0 18px 40px rgba(0,0,0,0.55));
+      pointer-events: none;
+    }
+    .hero-art--l {
+      top: auto; right: auto; bottom: 4vh; left: 6vw;
+      width: min(18vw, 200px);
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; font-weight: 500;
+      letter-spacing: 0.28em; text-transform: uppercase;
+      color: var(--ink-faint); margin-bottom: 30px;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+      font-size: clamp(2.2rem, 6.6vw, 4rem);
+      line-height: 1.08; letter-spacing: -0.01em;
+      max-width: 18ch; margin: 0 auto 30px;
+      position: relative; z-index: 2;
+    }
+    .byline {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .byline::before {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 0 auto 22px; background: var(--accent);
+    }
+
+    .shell { position: relative; max-width: 1100px; margin: 0 auto; padding: 40px 24px 90px; }
+    .col { max-width: 600px; margin: 0 auto; }
+    .col p { font-size: 1.02rem; font-weight: 300; line-height: 1.85; margin-bottom: 1.7em; }
+
+    .opener p:first-child::first-letter {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 3.4em;
+      float: left; line-height: 0.82;
+      padding: 0.06em 0.12em 0 0;
+      color: var(--accent);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700; font-size: 1.45rem; line-height: 1.3;
+      text-align: center; margin: 80px 0 30px;
+    }
+    h2::after {
+      content: ""; display: block; width: 26px; height: 1px;
+      margin: 20px auto 0; background: var(--rule);
+    }
+
+    .standalone {
+      font-family: 'Playfair Display', serif;
+      font-style: italic; font-weight: 400;
+      font-size: 1.5rem; line-height: 1.5; text-align: center;
+      max-width: 480px; margin: 56px auto; padding: 32px 0;
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .float-art {
+      display: none; position: absolute;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.55));
+      pointer-events: none; z-index: 1;
+    }
+    @media (min-width: 1040px) {
+      .float-art { display: block; }
+      .fa-1 { width: 161px; right: 1%;   top: 200px;  transform: rotate(2deg); }
+      .fa-2 { width: 189px; left: 0.5%;  top: 1000px; transform: rotate(-1.5deg); }
+      .fa-3 { width: 195px; right: 1.5%; top: 1900px; transform: rotate(1.5deg); }
+      .fa-4 { width: 186px; left: 1%;    top: 2700px; transform: rotate(-2deg); }
+      .fa-5 { width: 146px; right: 2%;   top: 3400px; transform: rotate(2deg); }
+    }
+    .inline-art { margin: 40px auto; text-align: center; }
+    .inline-art img {
+      max-width: min(78%, 320px); max-height: 420px;
+      width: auto; height: auto;
+      filter: drop-shadow(0 16px 32px rgba(0,0,0,0.5));
+    }
+    @media (min-width: 1040px) { .inline-art { display: none; } }
+
+    .plate { max-width: 760px; margin: 90px auto; text-align: center; }
+    .plate img {
+      max-width: min(100%, 480px);
+      max-height: 520px; width: auto;
+      filter: drop-shadow(0 22px 44px rgba(0,0,0,0.5));
+    }
+
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
+
+    .article-footer {
+      margin-top: 100px; padding-top: 34px;
+      border-top: 1px solid var(--rule);
+      display: flex; flex-direction: column; align-items: center; gap: 18px;
+    }
+    .article-footer a {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--ink-faint); text-decoration: none; transition: color 0.2s;
+    }
+    .article-footer a:hover { color: var(--ink); }
+    a:focus-visible { outline: 1px solid var(--accent); outline-offset: 4px; }
+  </style>
 </head>
 <body>
 
-  <a href="index.html" class="article-back">&#8592;</a>
+  <a href="index.html" class="article-back">&#8592; The Economic Wardrobe</a>
 
-  <div class="mag-viewer">
+  <header class="hero">
+    <img class="hero-art" src="assets/med/p1_1.webp" alt="Medieval artwork from the print edition cover" />
+    <img class="hero-art hero-art--l" src="assets/med/p2_1.webp" alt="Medieval illustration from the print edition" />
+    <p class="eyebrow">Medieval Europe</p>
+    <h1>How the Black Death Gave the Working Class Their First Taste of Luxury</h1>
+    <p class="byline">By Mabel Chen</p>
+  </header>
 
-    <div class="mag-spreads" id="magSpreads">
+  <main class="shell">
 
-      <button class="mag-arrow mag-arrow--prev" id="magPrev">&#8592;</button>
-      <button class="mag-arrow mag-arrow--next" id="magNext">&#8594;</button>
+    <img class="float-art fa-1" src="assets/med/p2_2.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-2" src="assets/med/p3_1.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-3" src="assets/med/p4_2.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-4" src="assets/med/p6_1.webp" alt="" aria-hidden="true" />
+    <img class="float-art fa-5" src="assets/med/p6_2.webp" alt="" aria-hidden="true" />
 
-      <!-- SPREAD 1 -->
-      <div class="mag-spread active" id="spread1">
-        <div class="mag-page-left canva-page">
-          <img src="medieval_pages/1.png" alt="Page 1" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="medieval_pages/2.png" alt="Page 2" />
-        </div>
+    <article>
+
+      <div class="col opener reveal">
+        <p>In 1347, a ship docked in Sicily carrying sailors who were already dying, and within five years a third of Europe was dead. The survivors &mdash; the peasants, the laborers, the serfs who had spent their entire lives dressed in rough undyed wool by law and by poverty &mdash; could suddenly afford silk, and nobody had planned it that way. The Black Death was the most radical economic redistribution in European history, and it showed up in what people wore almost immediately.</p>
       </div>
 
-      <!-- SPREAD 2 -->
-      <div class="mag-spread" id="spread2">
-        <div class="mag-page-left canva-page">
-          <img src="medieval_pages/3.png" alt="Page 3" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="medieval_pages/4.png" alt="Page 4" />
-        </div>
+      <h2 class="reveal">What Medieval Europe Looked Like Before the Plague</h2>
+
+      <div class="col reveal">
+        <p>To understand what the Black Death changed, you first need to understand how rigidly controlled Medieval European fashion was before it arrived.</p>
+
+        <p>Medieval Europe ran on feudalism, a system extremely economically stratified. At the top sat the nobility and clergy, who controlled the land, the labor, and the law, and at the bottom sat everyone else &mdash; serfs, peasants, and laborers who owned nothing, earned almost nothing, and dressed accordingly.</p>
+
+        <p>Clothing in Medieval Europe was not a choice but a declaration of rank enforced by law. Sumptuary laws spread across Medieval Europe dictating in extraordinary detail what each social class was permitted to wear. In England, France, and the Italian city states, these laws specified not just which fabrics were permitted for which classes but which colors, which furs, which embellishments, and even how long your shoes could be. The longer the pointed toe of your shoe &mdash; called a poulaine &mdash; the higher your social rank, with peasants in flat practical footwear and nobles wearing shoes with points so extreme they sometimes had to be tied to the knee to walk.</p>
+
+        <p>Wool was the fabric of the poor &mdash; undyed, rough, and practical &mdash; with linen reserved for undergarments and silk, velvet, and fur legally restricted to the nobility. A merchant who had done well enough to afford a silk border on his tunic was breaking the law, and a peasant who inherited a fine wool cloak from a lord was legally required to sell it. The feudal wardrobe was a cage, and it would take the worst catastrophe in European history to break it open.</p>
       </div>
 
-      <!-- SPREAD 3 -->
-      <div class="mag-spread" id="spread3">
-        <div class="mag-page-left canva-page">
-          <img src="medieval_pages/5.png" alt="Page 5" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="medieval_pages/6.png" alt="Page 6" />
-        </div>
+      <div class="inline-art reveal"><img src="assets/med/p3_1.webp" alt="Medieval image from the print edition, sumptuary law section" /></div>
+
+      <h2 class="reveal">The Black Death Deep Dive</h2>
+
+      <div class="col reveal">
+        <p>Between 1347 and 1351, the Black Death killed between 30 and 60 percent of Europe&rsquo;s population, with some regions seeing mortality rates closer to 80 percent. Entire villages were wiped out, monasteries that housed Europe&rsquo;s most educated people were devastated, and the clergy, who had told the poor that their suffering was God&rsquo;s will, died in the same numbers as everyone else, which did more damage to the Church&rsquo;s authority than a century of theology could have undone.</p>
+
+        <p>But the economic consequences were what changed everything about how Europe dressed. When half the labor force dies overnight, the survivors become valuable in ways they had never been before. Suddenly there weren&rsquo;t enough peasants to farm the land, and lords who had spent centuries treating their serfs as property found themselves competing for workers. Wages rose dramatically, in some regions doubling or tripling within a decade, and for the first time in centuries ordinary laborers had money left over after feeding themselves.</p>
       </div>
 
-      <!-- SPREAD 4 — closing spread -->
-      <div class="mag-spread" id="spread4">
-        <div class="mag-page-left canva-page">
-          <img src="medieval_pages/7.png" alt="Page 7" />
-        </div>
-        <div class="mag-page-right canva-page">
-          <img src="medieval_pages/8.png" alt="Page 8" />
-          <a href="index.html" class="return-home-btn">&#8592; Return Home</a>
-        </div>
+      <figure class="plate reveal">
+        <img src="assets/med/p4_1.webp" alt="Page from a medieval manuscript, from the print edition" />
+      </figure>
+
+      <div class="col reveal">
+        <p>The first thing many of them did with that money was buy better clothes, and this was not just a personal choice but a social earthquake. Peasants showing up to market in wool that had been dyed, in garments that had been cut with some care, in shoes that bore even a modest point &mdash; this was a direct challenge to the entire social order that clothing had been designed to maintain. The nobility panicked, and across Europe sumptuary laws were rewritten, tightened, and expanded in direct response to the plague&rsquo;s economic aftermath.</p>
+
+        <p>In England, the Sumptuary Law of 1363 was explicitly triggered by the sight of lower class people dressing above their station, specifying in exhaustive detail that grooms, servants, and agricultural workers were forbidden from wearing anything but blanket cloth and prohibited from wearing any fabric that cost more than a specific price per yard. The law was passed because people were already breaking it, and they were breaking it because for the first time in generations they could afford to.</p>
       </div>
 
-    </div><!-- /mag-spreads -->
+      <figure class="plate reveal">
+        <img src="assets/med/p5_1.webp" alt="Medieval image from the print edition, Sumptuary Law of 1363 section" />
+      </figure>
 
-    <div class="mag-dots">
-      <div class="mag-dot active"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-      <div class="mag-dot"></div>
-    </div>
+      <h2 class="reveal">What the Survivors Wore</h2>
 
-  </div><!-- /mag-viewer -->
+      <div class="col reveal">
+        <p>The decade after the Black Death saw a flowering of working class dress that had never existed before in Medieval Europe and would not exist again for centuries. Surviving wills and estate records from the 1350s and 1360s show ordinary laborers leaving behind wardrobes that would have been unthinkable a generation earlier &mdash; multiple garments, dyed fabrics, decorated belts, and leather shoes that, while not luxurious by any modern standard, were extraordinary by the standards of Medieval peasant life.</p>
 
-  <div class="more-from-wrap"><video class="bg-video" autoplay muted loop playsinline src="background.mp4"></video><section class="more-from">
-    <h2 class="section-heading">More From The Economic Wardrobe</h2>
-    <div class="more-from-grid">
-      <article class="card">
-        <a href="article-byzantine.html" class="article-link">
-          <span class="category-label">Power &amp; Pigment</span>
-          <h3 class="article-title article-title--card">The Color You Could Be Executed for Wearing</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">They built the empire. They just weren't allowed to dress like it.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="article-90s.html" class="article-link">
-          <span class="category-label">Cultural Comment</span>
-          <h3 class="article-title article-title--card">The Most Influential Decade in Fashion Was Broke the Whole Time</h3>
-          <p class="byline">By Mabel Chen</p>
-          <p class="article-blurb">The 1990s gave us the most copied aesthetic in history — born from economic anxiety.</p>
-        </a>
-      </article>
-      <article class="card">
-        <a href="index.html" class="article-link">
-          <span class="category-label">The Economic Wardrobe</span>
-          <h3 class="article-title article-title--card">Back to the Homepage</h3>
-          <p class="byline">All Issues</p>
-          <p class="article-blurb">Browse the full archive of fashion history through an economic lens.</p>
-        </a>
-      </article>
-    </div>
-  </section></div>
+        <p>The merchant class, already wealthier than the peasantry but still legally restricted from the finest fabrics, pushed even harder against the boundaries. Italian merchants in Florence and Venice began commissioning garments in fine wool and silk blends that technically skirted the sumptuary laws without breaking them, and the legal line between merchant and nobility in dress became increasingly contested and blurred. The nobility responded by escalating, because if the lower classes could now afford wool, the nobility needed something they couldn&rsquo;t.</p>
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      <p class="footer-title">The Economic Wardrobe</p>
-      <nav class="footer-nav">
-        <a href="about.html">About</a><a href="#">Subscribe</a>
-      </nav>
-      <p class="footer-copy">&copy; 2024 The Economic Wardrobe. All rights reserved.</p>
-    </div>
-  </footer>
+        <p>Velvet &mdash; extraordinarily expensive, labor intensive, and technically complex to produce &mdash; became the fabric of choice for the upper classes in the decades after the plague, while fur linings, gold embroidery, and jeweled accessories proliferated among those who could still afford to separate themselves visually from the newly prosperous working class. This arms race of fabric and status, with the poor reaching up and the wealthy pushing further away, was the direct economic engine of late Medieval fashion. The plague didn&rsquo;t just kill people &mdash; it destabilized the entire visual language of social hierarchy that European civilization had spent centuries constructing.</p>
+      </div>
 
-  <script src="js/main.js"></script>
-  <script src="js/editor.js"></script>
-  <script src="js/subscribe.js"></script>
+      <h2 class="reveal">When the Order Reasserted Itself</h2>
+
+      <div class="col reveal">
+        <p>The window of working class prosperity didn&rsquo;t last forever. By the late 14th century, landlords had found new ways to suppress wages and reassert control over labor, with the Statute of Laborers in England attempting to legally cap wages at pre-plague levels as a direct economic response to the same disruption that had produced the Sumptuary Law of 1363. The Church rebuilt its authority, and the feudal system, while permanently weakened, reasserted enough control to push the working class back toward the poverty that had defined them before 1347.</p>
+      </div>
+
+      <figure class="plate reveal">
+        <img src="assets/med/p7_1.webp" alt="Medieval image from the print edition, final section" />
+      </figure>
+
+      <p class="standalone reveal">The sumptuary laws remained on the books for another two centuries, but they were never quite as effective again. The plague had shown the working class something that couldn&rsquo;t be unseen &mdash; that their poverty was not ordained by God or nature but maintained by an economic system, and that the system could change.</p>
+
+    </article>
+
+    <footer class="article-footer">
+      <a href="article-blackdeath-print.html">View the print edition</a>
+      <a href="index.html">&#8592; Return home</a>
+    </footer>
+
+  </main>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      for (const e of entries) if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); }
+    }, { rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+  </script>
+
 </body>
 </html>
